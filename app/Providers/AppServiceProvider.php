@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
     {
        $this->app->singleton(
             'App\Mailing\NotificationContract',
-            'App\Mailing\EmailNotification'
+            'App\Mailing\MackdownNotification'
         );
     }
 

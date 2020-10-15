@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd817660-aed1-4f00-88df-d66d7d9e1c1b" name="Default Changelist" comment="" />
+    <list default="true" id="dd817660-aed1-4f00-88df-d66d7d9e1c1b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Auth/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/SignUpEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/SignUpEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mailing/MackdownNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mailing/MackdownNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/signup.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602553660331</updated>
       <workItem from="1602553662539" duration="909000" />
-      <workItem from="1602555080434" duration="14766000" />
+      <workItem from="1602555080434" duration="17291000" />
     </task>
     <servers />
   </component>
@@ -63,6 +70,10 @@
       <screen x="0" y="0" width="1280" height="758" />
     </state>
     <state x="369" y="141" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.758@0.0.1280.758" timestamp="1602733514639" />
+    <state x="378" y="152" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602757091985">
+      <screen x="0" y="0" width="1280" height="758" />
+    </state>
+    <state x="378" y="152" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.758@0.0.1280.758" timestamp="1602757091985" />
     <state x="205" y="112" key="NewPhpClassDialog" timestamp="1602752747774">
       <screen x="0" y="0" width="1280" height="758" />
     </state>

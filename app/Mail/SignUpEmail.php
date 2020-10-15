@@ -16,9 +16,12 @@ class SignUpEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $user;
+    public $url;
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
+        $this->url = 'http://localhost:3000/confirm-email/'.$user->token;
     }
 
     /**
