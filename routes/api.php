@@ -25,7 +25,9 @@ use Illuminate\Support\Facades\Route;
     });
     Route::get('/verify-account/{token}', 'API\Auth\AuthController@verifyAccount')->name('verify-account');
     Route::post('/register', 'API\Auth\AuthController@register')->name('register');
-    Route::post('/login', 'API\Auth\AuthController@login')->name('login');
     Route::get('/account-request-verification/{token}', 'API\Auth\AuthController@requestVerification')->name('request-verification');
+    Route::post('/login', 'API\Auth\AuthController@login')->name('login');
+    Route::post('/forgot-password', 'API\Auth\AuthController@forgotPassword')->name('forgot-password');
+    Route::post('/change-password', 'API\Auth\AuthController@changePassword')->name('change-password');
     Route::get('/error', 'API\Auth\AuthController@error')->name('error');
 

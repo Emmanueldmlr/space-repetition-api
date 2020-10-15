@@ -149,11 +149,11 @@ class AuthController extends Controller
         }
     }
 
-    public function requestVerification($token){
+    public function requestVerification($token, NotificationContract  $notificationContract){
         try {
             $user = User::where('token', $token)->first();
             if ($user) {
-                $user->notify(new SignUpNotification($user));
+                $notificationContract->sendRegistrationEmail($user);
                 $data = [
                     'status' => true,
                     'message' => " A mail has been sent to your email, kindly follow through"
@@ -167,6 +167,81 @@ class AuthController extends Controller
                 ];
                 return response($data,401);
             }
+        }
+        catch(\Exception $exception){
+            $data = [
+                'status' => false,
+                'error' => 'Action Could not be Performed'
+            ];
+            return response($data, 500);
+        }
+    }
+
+    public function forgotPassword(Request $request, User $user, NotificationContract $notificationContract){
+        $validator =  Validator::make($request->all(),[
+            'email' => 'bail|required',
+        ]);
+        try {
+            if ($validator->fails()){
+                $data = [
+                    'status' => false,
+                    'error' =>"Email Field Must be Filled",
+                ];
+                return response($data,422);
+            }
+            $getUser = $user->checkUser($request->email);
+            if (!$getUser){
+                $data = [
+                    'status' => false,
+                    'error' =>"Email Does not Exist",
+                ];
+                return response($data,404);
+            }
+            $notificationContract->sendForgotPasswordEmail($getUser);
+            $data = [
+                'status' => true,
+                'message' =>"A mail has been sent to your email, kindly follow through",
+            ];
+            return response($data,200);
+        }
+        catch(\Exception $exception){
+            $data = [
+                'status' => false,
+                'error' => 'Action Could not be Performed'
+            ];
+            return response($data, 500);
+        }
+    }
+
+    public function changePassword(Request $request, User $user){
+        $validator =  Validator::make($request->all(),[
+            'password' => 'bail|required',
+            'token' => 'bail|required'
+        ]);
+        try {
+            if ($validator->fails()){
+                $data = [
+                    'status' => false,
+                    'error' =>"Ensure all Fields are Filled",
+                ];
+                return response($data,422);
+            }
+            $getUser = $user->fetchUser($request->token);
+            if (!$getUser){
+                $data = [
+                    'status' => false,
+                    'error' =>"Oops!, Invalid Token",
+                ];
+                return response($data,401);
+            }
+            $getUser->password = bcrypt($request->password);
+            $getUser->token = Str::random(15);
+            $getUser->save();
+            $data = [
+                'status' => true,
+                'message' =>"Password Successfully Changed",
+            ];
+            return response($data,200);
         }
         catch(\Exception $exception){
             $data = [

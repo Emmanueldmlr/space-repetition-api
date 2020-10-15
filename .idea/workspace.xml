@@ -4,10 +4,10 @@
     <list default="true" id="dd817660-aed1-4f00-88df-d66d7d9e1c1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Auth/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/SignUpEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/SignUpEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mailing/EmailNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mailing/EmailNotification.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Mailing/MackdownNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mailing/MackdownNotification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/signup.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mailing/NotificationContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mailing/NotificationContract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602553660331</updated>
       <workItem from="1602553662539" duration="909000" />
-      <workItem from="1602555080434" duration="17291000" />
+      <workItem from="1602555080434" duration="22773000" />
     </task>
     <servers />
   </component>
