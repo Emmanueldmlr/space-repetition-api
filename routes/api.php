@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
     Route::middleware('auth:api')->group(function(){
         Route::middleware('verify')->group(function (){
             Route::get('/todos', 'API\Todo\TodoController@index');
+            Route::get('/todo/{id}', 'API\Todo\TodoController@getSingleTodo');
             Route::post('/todos', 'API\Todo\TodoController@store');
             Route::Delete('/todos/{id}', 'API\Todo\TodoController@destroy');
             Route::Put('/todos/{id}', 'API\Todo\TodoController@update');

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dd817660-aed1-4f00-88df-d66d7d9e1c1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Todo/TodoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Todo/TodoController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,7 @@
       <workItem from="1602553662539" duration="909000" />
       <workItem from="1602555080434" duration="23631000" />
       <workItem from="1602810530427" duration="390000" />
-      <workItem from="1602811495600" duration="7996000" />
+      <workItem from="1602811495600" duration="8464000" />
     </task>
     <servers />
   </component>
