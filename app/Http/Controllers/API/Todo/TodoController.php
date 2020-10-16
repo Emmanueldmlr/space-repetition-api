@@ -55,43 +55,30 @@ class TodoController extends Controller
             $todos = $this->fetchTodo();
 
             //return result
-            return response(['todo'=>$todos, 'success' => true, "message" =>"Todo Successfully Created"], 200);
+            return response(['todo'=>$todos, 'status' => true, "message" =>"Todo Successfully Created"], 200);
         }
         catch (\Exception $exception){
-            $data = [
-                'error' => 'Action could not be completed',
-            ];
-            return response($data,500);
+            return response(['error' => 'Action Could not be performed', 'status' => false], 500);
         }
     }
 
-    public function destroy($id,$todoType, SubTodo $subTodoInstance)
+    public function destroy($id)
     {
         try {
-            switch ($todoType){
-                case "main":
-                    $todo = Todo::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
-                    if (!$todo){
-                        return response(['error' => 'Todo does not exist'] , 401);
-                    }
-                    break;
-                case "subTodo":
-                    $todo = $subTodoInstance->fetchUserTodo($id);
-                    if (!$todo){
-                        return response(['error' => 'Todo does not exist'] , 401);
-                    }
-                    break;
-                default:
-                    break;
+            $todo = Todo::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
+
+            if (!$todo){
+                return response(['error' => 'Todo does not exist'] , 404);
             }
+
             if($todo->delete()){
                 $todos = $this->fetchTodo();
                 return response(['todo'=>$todos, 'status' => true, 'message' => "Todo Successfully deleted"], 200);
             }
-            return response(['error' => 'Todo could not be deleted'] , 400);
+            return response(['error' => 'Todo could not be deleted', 'status' => false] , 400);
         }
         catch(\Exception $exception){
-            return response(['error' => 'Action could not be performed'] , 500);
+            return response(['error' => 'Action Could not be performed', 'status' => false], 500);
         }
     }
 
@@ -99,16 +86,16 @@ class TodoController extends Controller
         try {
             $validator =  Validator::make($request->all(),[
                 'isCompleted' => 'bail|required',
-                'todoType' => 'bail|required'
+/*                'todoType' => 'bail|required'*/
             ]);
 
             if ($validator->fails()){
                 $data = [
-                    'errors' =>$validator->errors(),
+                    'errors' =>"Kindly Ensure all Fields are Correctly Filled",
                 ];
                 return response($data,422);
             }
-            switch ($request->todoType){
+            /*switch ($request->todoType){
                 case "main":
                     $todo = Todo::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
                     if (!$todo){
@@ -136,26 +123,23 @@ class TodoController extends Controller
                         }
                     }
                     break;
-                case "subTodo":
-                    $todo = $subTodoInstance->fetchUserTodo($id);
-                    if (!$todo){
-                        return response(['error' => 'Todo does not exist'] , 401);
-                    }
-                    $todo->isCompleted = $request->isCompleted;
-                    $todo->save();
-                    $todos = $this->fetchTodo();
-                    return response(['todo'=>$todos, 'success' => true], 200);
-                    break;
+                case "subTodo":*/
+            $todo = $subTodoInstance->fetchUserTodo($id);
+            if (!$todo){
+                return response(['error' => 'Todo does not exist'] , 404);
+            }
+            $todo->isCompleted = $request->isCompleted;
+            $todo->save();
+            $todos = $this->fetchTodo();
+            return response(['todo'=>$todos, 'status' => true], 200);
+            /*        break;
 
                 default:
                     break;
-            }
+            }*/
         }
         catch (\Exception $exception){
-            $data = [
-                'error' => 'Action could not be completed',
-            ];
-            return response($data,500);
+            return response(['error' => 'Action Could not be performed', 'status' => false], 500);
         }
     }
 

@@ -136,7 +136,7 @@ class AuthController extends Controller
             Auth::user()->token()->revoke();
             $data = [
                 'status' => true,
-                'message' => "Logout Successfull"
+                'message' => "Logout Successful"
             ];
             return response($data, 200);
         }
