@@ -28,11 +28,10 @@ class TodoController extends Controller
             $validator =  Validator::make($request->all(),[
                 'title' => 'bail|required|min:3|max:50|unique:todos'
             ]);
-            //check validation
 
             if ($validator->fails()){
                 $data = [
-                    'errors' =>$validator->errors(),
+                    'error' =>"Title Field is Required",
                 ];
                 return response($data,422);
             }
@@ -40,12 +39,11 @@ class TodoController extends Controller
             // add new task if validation passed
             $newTodo = $todo->createTodo($request);
 
-            // add sub tasks if any
-            if ($request->subTodos){
-                foreach ($request->subTodos as $subTask){
+            if ($request->subTodo){
+                foreach ($request->subTodo as $subTask){
                     $subTodo = new SubTodo();
                     $subTodo->todo_id = $newTodo->id;
-                    $subTodo->todo = $subTask;
+                    $subTodo->todo = $subTask['value'];
                     $subTodo->token = Str::random(15);
                     $subTodo->save();
                 }
