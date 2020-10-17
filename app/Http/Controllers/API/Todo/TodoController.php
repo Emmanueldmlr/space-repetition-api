@@ -80,22 +80,6 @@ class TodoController extends Controller
         }
     }
 
-    public function getSingleTodo($id, SubTodo $subTodo)
-    {
-        try {
-            $todo = $subTodo->fetchUserTodo($id);
-
-            if (!$todo){
-                return response(['error' => 'Todo does not exist'] , 404);
-            }
-            return response(['todo'=>$todo, 'status' => true, 'message' => "Fetched Successfully"], 200);
-
-        }
-        catch(\Exception $exception){
-            return response(['error' => 'Action Could not be performed', 'status' => false], 500);
-        }
-    }
-
     public function update(Request $request,$id, SubTodo $subTodoInstance){
         try {
             $validator =  Validator::make($request->all(),[
