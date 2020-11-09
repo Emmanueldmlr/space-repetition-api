@@ -87,7 +87,7 @@ class AuthController extends Controller
             'email' => 'bail|required',
             'password' => 'bail|required',
         ]);
-        try {
+//        try {
             if ($validator->fails()){
                 $data = [
                     'status' => false,
@@ -113,14 +113,14 @@ class AuthController extends Controller
                 'error' => 'Invalid Login Details'
             ];
             return response($data,401);
-        }
-        catch (\Exception $exception){
-            $data = [
-                'status' => false,
-                'error' => 'Action Could not be Performed'
-            ];
-            return response($data, 500);
-        }
+//        }
+//        catch (\Exception $exception){
+//            $data = [
+//                'status' => false,
+//                'error' => 'Action Could not be Performed'
+//            ];
+//            return response($data, 500);
+//        }
     }
 
     public function error(){
