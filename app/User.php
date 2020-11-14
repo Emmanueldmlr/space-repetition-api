@@ -42,6 +42,9 @@ class User extends Authenticatable
     public function todo (){
         return $this->hasMany(Todo::class);
     }
+    public function cards (){
+        return $this->hasMany(User::class);
+    }
 
     public function createUser($request){
         $this->email = $request->email;
