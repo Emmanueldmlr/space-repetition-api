@@ -12,8 +12,9 @@ class Card extends Model
     protected $keyType = 'string';
     public $incrementing = false;
     protected $guarded = [];
+    protected $primaryKey = 'uuid';
     protected $fillable = [
-        'uuid', 'title', 'body', 'tags', 'user_id'
+         'title', 'body', 'tags', 'user_id'
     ];
 
     public function user(){

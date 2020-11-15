@@ -21,7 +21,8 @@ class CardController extends Controller
 
     public function store(Card $card){
         try {
-            $newCard = $card->createCard();
+            $createCard = $card->createCard();
+            $newCard = $card->fetchCard($createCard->uuid);
             return response(['card'=>$newCard, 'status' => true, "message" =>"Card Successfully Created"], 200);
         }
         catch (\Exception $exception) {

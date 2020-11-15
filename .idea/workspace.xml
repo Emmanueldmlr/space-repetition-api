@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Card.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Card.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Card/CardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Card/CardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Todo/TodoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Todo/TodoController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
       <workItem from="1604197612346" duration="403000" />
       <workItem from="1604411251379" duration="879000" />
       <workItem from="1604745446059" duration="530000" />
-      <workItem from="1604753712628" duration="7677000" />
+      <workItem from="1604753712628" duration="9103000" />
     </task>
     <servers />
   </component>
