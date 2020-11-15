@@ -48,7 +48,6 @@ class TodoController extends Controller
                     $subTodo->save();
                 }
             }
-
             //fetch todos
             $todos = $this->fetchTodo();
 
@@ -64,11 +63,9 @@ class TodoController extends Controller
     {
         try {
             $todo = Todo::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
-
             if (!$todo){
                 return response(['error' => 'Todo does not exist'] , 404);
             }
-
             if($todo->delete()){
                 $todos = $this->fetchTodo();
                 return response(['todo'=>$todos, 'status' => true, 'message' => "Todo Successfully deleted"], 200);

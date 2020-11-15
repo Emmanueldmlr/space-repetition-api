@@ -23,4 +23,10 @@ class Card extends Model
     public function getCards(){
         return Card::where('user_id', Auth::user()->id)->get();
     }
+
+    public function createCard(){
+        $this->user_id = Auth::user()->id;
+        $this->save();
+        return $this;
+    }
 }
