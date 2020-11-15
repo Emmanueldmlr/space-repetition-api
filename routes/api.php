@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
             Route::Put('/todos/{id}', 'API\Todo\TodoController@update');
             Route::get('/cards', 'API\Card\CardController@index');
             Route::post('/cards', 'API\Card\CardController@store');
+            Route::put('/cards/{uuid}', 'API\Card\CardController@update');
         });
         Route::get('/logout', 'API\Auth\AuthController@logout');
     });

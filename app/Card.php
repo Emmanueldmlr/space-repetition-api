@@ -29,4 +29,8 @@ class Card extends Model
         $this->save();
         return $this;
     }
+
+    public function fetchCard($uuid){
+        return Card::where(['user_id' => Auth::user()->id, 'uuid' => $uuid])->first();
+    }
 }
