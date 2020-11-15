@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
             Route::post('/todos', 'API\Todo\TodoController@store');
             Route::Delete('/todos/{id}', 'API\Todo\TodoController@destroy');
             Route::Put('/todos/{id}', 'API\Todo\TodoController@update');
+            Route::get('/cards', 'API\Card\CardController@index');
         });
         Route::get('/logout', 'API\Auth\AuthController@logout');
     });

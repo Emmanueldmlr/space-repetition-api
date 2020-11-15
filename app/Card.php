@@ -4,6 +4,7 @@ namespace App;
 
 use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Uuid;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Card extends Model
 {
@@ -17,5 +18,9 @@ class Card extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function getCards(){
+        return Card::where('user_id', Auth::user()->id)->get();
     }
 }
